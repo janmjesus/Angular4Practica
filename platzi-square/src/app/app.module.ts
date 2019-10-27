@@ -7,11 +7,17 @@ import { AppComponent } from './app.component';
 import {ResaltarDirective} from "./directives/resaltar.directive";
 import {ContarClicksDirective} from "./directives/contar-clicks.directive";
 
-import { Routes } from "@angular/router";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
+import { Routes,RouterModule } from "@angular/router";
+import {DetalleComponent} from "./detalle/detalle.component";
+import {LugaresComponent} from "./lugares/lugares.component";
 
 const appRoutes:Routes = [
-  {path: '', component: AppComponent},
-  {path: 'lugares', component: AppComponent}
+  {path: '', component: LugaresComponent},
+  {path: 'lugares', component: LugaresComponent},
+  {path: 'detalle', component: DetalleComponent},
+
 
 
 ];
@@ -20,14 +26,18 @@ const appRoutes:Routes = [
   declarations: [
     AppComponent,
     ResaltarDirective,
-    ContarClicksDirective
+    ContarClicksDirective,
+    DetalleComponent,
+    LugaresComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB9dI5jI2QF6ZiW2mqcaLfCrEWqEE93Rug'
-    })
+    }),
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes,{enableTracing: true}),
   ],
   providers: [],
   bootstrap: [AppComponent]
