@@ -24,7 +24,7 @@
 
         <ng-container *ngFor="let lugar of lugares">
 
-          <a routerLink="/detalle/{{lugar.id}}">
+          <a routerLink="/detalle/{{lugar.id}}" [queryParams]="{action:'view'}">
             <li class="list-group-item" *ngIf="lugar.active">{{ lugar.nombre }}</li>
           </a>
 

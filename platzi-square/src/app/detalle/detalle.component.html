@@ -1,1 +1,26 @@
-<h1>Detalle {{ hola }} y este es el id del elemento: {{ idRecibido }}</h1>
+<!--<h1>Detalle {{ hola }} y este es el id del elemento: {{ idRecibido }}</h1>-->
+
+<div class="card card-body bg-light">
+
+  <p><a routerLink="/lugares">Lugares</a> / {{ lugar.nombre }} </p>
+
+</div>
+
+<div class="container">
+
+  <h1>{{ lugar.nombre }}</h1>
+  <br>
+
+  <small>{{ lugar.distancia }} km</small>
+
+  <div class="card card-body bg-light">
+
+    <p>
+      {{ lugar.description }}
+    </p>
+
+    <b>Plan: {{ lugar.plan }}</b>
+
+  </div>
+
+</div>
