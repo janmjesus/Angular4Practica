@@ -13,12 +13,15 @@ import { Routes,RouterModule } from "@angular/router";
 import {DetalleComponent} from "./detalle/detalle.component";
 import {LugaresComponent} from "./lugares/lugares.component";
 import {ContactoComponent} from "./contacto/contacto.component";
+import {LugaresService} from "./services/lugares.service";
+import {CrearComponent} from "./crear/crear.component";
 
 const appRoutes:Routes = [
   {path: '', component: LugaresComponent},
   {path: 'lugares', component: LugaresComponent},
   {path: 'detalle/:id', component: DetalleComponent},
   {path: 'contacto', component: ContactoComponent},
+  {path: 'crear', component: CrearComponent},
 
 
 
@@ -31,7 +34,8 @@ const appRoutes:Routes = [
     ContarClicksDirective,
     DetalleComponent,
     LugaresComponent,
-    ContactoComponent
+    ContactoComponent,
+    CrearComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,7 @@ const appRoutes:Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes,{enableTracing: true}),
   ],
-  providers: [],
+  providers: [LugaresService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

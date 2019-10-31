@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {LugaresService} from "../services/lugares.service";
 
 @Component({
   selector: 'app-detalle',
@@ -11,18 +12,11 @@ export class DetalleComponent {
     hola = "hola";
   //let idRecibido = "";
     idRecibido = "";
-
-  lugares = [
-    {id:1,plan: 'pagado',cercania: 1, distancia: 1, nombre: "Nombre1", active: 0,description: 'Descripcion'},
-    {id:2,plan: 'gratuito',cercania: 3, distancia: 15, nombre: "Nombre2", active: 1,description: 'Descripcion'},
-    {id:3,plan: 'gratuito',cercania: 2, distancia: 5, nombre: "Nombre3", active: 0,description: 'Descripcion'},
-    {id:4,plan: 'gratuito',cercania: 3, distancia: 45, nombre: "Nombre5", active: 1,description: 'Descripcion'},
-  ];
-
+    lugares = null;
   id = null;
   lugar = {};
 
-  constructor( private route: ActivatedRoute ){
+  constructor( private route: ActivatedRoute,private lugaresService: LugaresService ){
 
       //console.log("EPAAAAAAAAA");
      //console.log( this.route.snapshot.params['id'] );
@@ -35,15 +29,13 @@ export class DetalleComponent {
 
       this.id = this.route.snapshot.params['id'];
 
-       this.lugar = this.buscarLugar();
+        this.lugares = this.lugaresService.getLugares();
+
+       this.lugar = this.lugaresService.buscarLugar( this.idRecibido );
 
 
      }
 
-     buscarLugar(){
 
-      return this.lugares.filter( (lugar) => { return lugar.id == this.id } )[0] || null;
-
-     }
 
 }

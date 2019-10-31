@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {LugaresService} from "../services/lugares.service";
 
 @Component({
   selector: 'app-lugares',
@@ -8,18 +9,25 @@ import { Component } from '@angular/core';
 export class LugaresComponent {
   title = 'platzi-square';
 
-  lugares = [
-    {id:1,plan: 'pagado',cercania: 1, distancia: 1, nombre: "Nombre1", active: 0},
-    {id:2,plan: 'gratuito',cercania: 3, distancia: 15, nombre: "Nombre2", active: 1},
-    {id:3,plan: 'gratuito',cercania: 2, distancia: 5, nombre: "Nombre3", active: 0},
-    {id:4,plan: 'gratuito',cercania: 3, distancia: 15, nombre: "Nombre5", active: 1},
-  ];
+
 
   lat = 0;
   lng = 0;
 
-  constructor(){
+  lugares = null;
 
+  constructor( private lugaresService: LugaresService ){
+
+      this.lugares = this.lugaresService.getLugares();
+
+      /*
+
+        lugaresService.getLugares().subscribe( (lugares) => {
+
+          this.lugares = lugares;
+        });
+
+      */
 
   }
 
