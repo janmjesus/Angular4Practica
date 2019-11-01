@@ -11,7 +11,7 @@ export class LugaresService{
     {id:4,plan: 'gratuito',cercania: 3, distancia: 15, nombre: "Nombre5", active: 1,description: "Descripcion4"},
   ];
 
-  /*constructor( private afDB:AngularFireDatabase ){
+  /*constructor( private afDB:AngularFireDatabase, private http:Http ){
 
 
 
@@ -37,10 +37,34 @@ export class LugaresService{
 
   public guardarLugar(lugar){
 
-     // console.log("Desde el servicio se ve el objeto" + lugar.nombre);
+
 
     //this.afDB.database.ref('lugares/' + lugar.id).set(lugar);
   }
 
+  public editarLugar(lugar){
+
+
+
+    //this.afDB.database.ref('lugares/' + lugar.id).set(lugar);
+  }
+
+  /*
+
+    public obtenerGeoData( direccion ){
+
+      return this.http.get('http://maps.google.com/maps/api/geocode/json?address='+direccion);
+
+    }
+
+
+
+  */
+
+  public getLugar(id){
+
+    //this.afDB.object('lugares/' + id);
+
+  }
 
 }

@@ -20,15 +20,25 @@
 
       <h2>Lugares Cercanos</h2>
 
-      <a class="btn btn-primary" routerLink="/crear">Crear Nuevo Negocio</a>
+      <a class="btn btn-primary" routerLink="/crear/new">Crear Nuevo Negocio</a>
+
+      <br><br>
 
       <ul class="list-group">
 
         <ng-container *ngFor="let lugar of lugares">
 
-          <a routerLink="/detalle/{{lugar.id}}" [queryParams]="{action:'view'}">
-            <li class="list-group-item" *ngIf="lugar.active">{{ lugar.nombre }}</li>
+          <li class="list-group-item" style="display:flex;justify-content: space-around">
+
+          <a routerLink="/detalle/{{lugar.id}}">
+            {{ lugar.nombre }}(VER)
           </a>
+
+          <a routerLink="/crear/{{lugar.id}}">
+          {{ lugar.nombre }}(EDITAR)
+          </a>
+
+          </li>
 
         </ng-container>
 

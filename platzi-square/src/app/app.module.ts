@@ -21,7 +21,7 @@ const appRoutes:Routes = [
   {path: 'lugares', component: LugaresComponent},
   {path: 'detalle/:id', component: DetalleComponent},
   {path: 'contacto', component: ContactoComponent},
-  {path: 'crear', component: CrearComponent},
+  {path: 'crear/:id', component: CrearComponent},
 
 
 
@@ -45,6 +45,8 @@ const appRoutes:Routes = [
     }),
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes,{enableTracing: true}),
+    //HttpModule
+
   ],
   providers: [LugaresService],
   bootstrap: [AppComponent]

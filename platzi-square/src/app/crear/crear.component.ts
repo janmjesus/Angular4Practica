@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {LugaresService} from "../services/lugares.service";
+import {ActivatedRoute} from "@angular/router";
 
 
 @Component({
@@ -11,22 +12,65 @@ export class CrearComponent {
 
   lugar: any = {};
 
+  id:any = null;
 
-  constructor( private lugaresService:LugaresService ){
+  constructor( private lugaresService:LugaresService,private route: ActivatedRoute ){
 
+    this.id = this.route.snapshot.params['id'];
 
+    //console.log( this.id )
+
+    if( this.id != 'new' ){
+
+      /*this.lugaresService.getLugar(this.id).subscribe( (lugar) => {
+
+          this.lugar = lugar;
+
+       });
+      */
+
+    }
 
   }
 
   guardarLugar(){
 
-    //console.log(this.lugar);
-    this.lugar.id = Date.now();
+    var direccion = this.lugar.calle + ',' + this.lugar.ciudad + ',' + this.lugar.pais;
 
-    this.lugaresService.guardarLugar( this.lugar );
+    /*this.lugaresService.obtenerGeoData( direccion ).subscribe( (result) => {
 
-    alert('Negocio guardado con exito');
+        this.lugar.lat = 0;
+        this.lugar.lng = 0;
+
+       this.lugar.id = Date.now();
+
+       this.lugaresService.guardarLugar( this.lugar );
+
+       alert('Negocio guardado con exito');
+       this.lugar = {};
+
+
+    });*/
+
+
+
+
+    if( this.id != 'new'){
+
+      this.lugaresService.editarLugar(this.lugar);
+      alert('Negocio editado con exito');
+    }
+    else{
+      this.lugar.id = Date.now();
+      this.lugaresService.guardarLugar( this.lugar );
+
+      alert('Negocio guardado con exito');
+
+
+    }
+
     this.lugar = {};
+
 
   }
 

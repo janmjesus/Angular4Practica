@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5888b7cd-dc2b-49c8-bbe5-6b812f9c81f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/platzi-square/src/app/services/lugares.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/platzi-square/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/platzi-square/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platzi-square/src/app/detalle/detalle.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/platzi-square/src/app/detalle/detalle.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platzi-square/src/app/crear/crear.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/platzi-square/src/app/crear/crear.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platzi-square/src/app/crear/crear.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/platzi-square/src/app/crear/crear.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/platzi-square/src/app/lugares/lugares.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/platzi-square/src/app/lugares/lugares.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platzi-square/src/app/lugares/lugares.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/platzi-square/src/app/lugares/lugares.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platzi-square/src/app/services/lugares.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/platzi-square/src/app/services/lugares.service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +58,8 @@
       <workItem from="1572023011871" duration="5700000" />
       <workItem from="1572189409062" duration="13207000" />
       <workItem from="1572352974665" duration="10334000" />
-      <workItem from="1572462803131" duration="5224000" />
+      <workItem from="1572462803131" duration="5330000" />
+      <workItem from="1572552135559" duration="6214000" />
     </task>
     <servers />
   </component>
@@ -70,7 +71,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
