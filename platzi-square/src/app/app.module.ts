@@ -15,6 +15,7 @@ import {LugaresComponent} from "./lugares/lugares.component";
 import {ContactoComponent} from "./contacto/contacto.component";
 import {LugaresService} from "./services/lugares.service";
 import {CrearComponent} from "./crear/crear.component";
+import {LinkifystrPipe} from "./pipes/linkifystr.pipe";
 
 const appRoutes:Routes = [
   {path: '', component: LugaresComponent},
@@ -35,7 +36,8 @@ const appRoutes:Routes = [
     DetalleComponent,
     LugaresComponent,
     ContactoComponent,
-    CrearComponent
+    CrearComponent,
+    LinkifystrPipe
   ],
   imports: [
     BrowserModule,

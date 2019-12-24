@@ -1,3 +1,13 @@
+
+<div id="cuadrado" [@contenedorAnimable]="state" (@contenedorAnimable.start)="animacionInicia($event)" (@contenedorAnimable.done)="animacionTermina($event)">
+
+
+
+</div>
+
+<a class="btn btn-default" (click)="animar()">Animar</a>
+
+
 <div class="container" role="main">
 
 
@@ -11,6 +21,7 @@
   </agm-map>
   -->
   <br><br>
+
 
 
 
@@ -31,11 +42,11 @@
           <li class="list-group-item" style="display:flex;justify-content: space-around">
 
           <a routerLink="/detalle/{{lugar.id}}">
-            {{ lugar.nombre }}(VER)
+            {{ lugar.nombre | lowercase }}(VER)
           </a>
 
           <a routerLink="/crear/{{lugar.id}}">
-          {{ lugar.nombre }}(EDITAR)
+          {{ lugar.nombre | lowercase}}(EDITAR)
           </a>
 
           </li>
@@ -49,6 +60,26 @@
     <div class="col-md-4">
 
       <h2>Destacados</h2>
+
+      <ul class="list-group">
+
+        <ng-container *ngFor="let lugar of lugares">
+
+          <li class="list-group-item" style="display:flex;justify-content: space-around">
+
+            <a routerLink="/detalle/{{lugar.id}}">
+              {{ lugar.nombre | lowercase }}(VER)
+            </a>
+
+            <a routerLink="/crear/{{lugar.id}}">
+              {{ lugar.nombre | lowercase}}(EDITAR)
+            </a>
+
+          </li>
+
+        </ng-container>
+
+      </ul>
 
     </div>
 

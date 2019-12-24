@@ -1,8 +1,13 @@
 import {Injectable} from "@angular/core";
 
+//import 'rxjs/add/operator/map';
+//import { Http, Headers } from "@angular/http";
+
 @Injectable()
 
 export class LugaresService{
+
+  // API_ENDPOINT = https://platzisquare.firebaseio.com; //EJEMPLO DE LA URL DE LA API EN ESTE CASO
 
   lugares = [
     {id:1,plan: 'pagado',cercania: 1, distancia: 1, nombre: "Nombre1", active: 0,description: "Descripcion1"},
@@ -18,6 +23,16 @@ export class LugaresService{
   }*/
 
   public getLugares(){
+
+    // return this.afDB.list('lugares/');
+    // return this.http.get(this.API_ENDPOINT+'/.json')
+    //        .map( ( resultado ) => {
+    //
+                  //const data = resultado.json().lugares;
+                  //return data;
+    //
+    //        });
+
 
     return this.lugares;
 
@@ -40,6 +55,15 @@ export class LugaresService{
 
 
     //this.afDB.database.ref('lugares/' + lugar.id).set(lugar);
+
+    /*
+
+    const headers = new Headers({ "Content-Type": "application/json" });
+
+    return this.http.post(this.API_ENDPOINT+'lugares.json',lugar,{ headers:headers } );
+
+
+     */
   }
 
   public editarLugar(lugar){
