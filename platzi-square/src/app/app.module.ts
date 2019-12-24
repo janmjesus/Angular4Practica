@@ -16,6 +16,9 @@ import {ContactoComponent} from "./contacto/contacto.component";
 import {LugaresService} from "./services/lugares.service";
 import {CrearComponent} from "./crear/crear.component";
 import {LinkifystrPipe} from "./pipes/linkifystr.pipe";
+import {LoginComponent} from "./login/login.component";
+import {RegistroComponent} from "./registro/registro.component";
+import {AutorizacionService} from "./services/autorizacion.service";
 
 const appRoutes:Routes = [
   {path: '', component: LugaresComponent},
@@ -23,6 +26,8 @@ const appRoutes:Routes = [
   {path: 'detalle/:id', component: DetalleComponent},
   {path: 'contacto', component: ContactoComponent},
   {path: 'crear/:id', component: CrearComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'registro', component: RegistroComponent},
 
 
 
@@ -37,7 +42,9 @@ const appRoutes:Routes = [
     LugaresComponent,
     ContactoComponent,
     CrearComponent,
-    LinkifystrPipe
+    LinkifystrPipe,
+    LoginComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +57,7 @@ const appRoutes:Routes = [
     //HttpModule
 
   ],
-  providers: [LugaresService],
+  providers: [LugaresService, AutorizacionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
