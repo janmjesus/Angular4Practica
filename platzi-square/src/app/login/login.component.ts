@@ -9,12 +9,24 @@ import {AutorizacionService} from "../services/autorizacion.service";
 })
 export class LoginComponent {
 
-  a = 5;
+  //a = 5;
+
+  loginParams:any = {};
 
   constructor( private autorizacionService: AutorizacionService ){
 
-      this.autorizacionService.login('email','password');
+      //this.autorizacionService.login('email','password');
 
+  }
+
+  login(){
+    /*
+
+
+    this.autorizacionService.login(this.loginParams.email,this.loginParams.password);
+
+
+    */
   }
 
 }
